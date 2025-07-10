@@ -6,6 +6,20 @@ import 'package:test_qiita_app/models/article.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
+
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Qiita Search')),
+      body: Container(),
+    );
+  }
+
   Future<List<Article>> searchQiita(String keyword) async {
     //URL、クエリパラメータの設定
     final Uri uri = Uri.https("qiita.com", "/api/v2/items", {
@@ -29,18 +43,5 @@ class SearchScreen extends StatefulWidget {
     } else {
       return [];
     }
-  }
-
-  @override
-  State<SearchScreen> createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Qiita Search')),
-      body: Container(),
-    );
   }
 }
