@@ -1,5 +1,5 @@
 class User {
-  User({required this.id, required this.profileImageUrl, required this.name});
+  User({required this.id, required this.profileImageUrl, this.name = ''});
 
   final String id;
   final String profileImageUrl;
@@ -9,7 +9,7 @@ class User {
     return User(
       id: json['id'] as String,
       profileImageUrl: json['profile_image_url'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String? ?? '',
     );
   }
 }
