@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/search_screen.dart';
+import 'screens/search_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
